@@ -47,8 +47,12 @@ var lowerCase = confirm("Click ok for lowercase characters." );
  };
  return userOptions
 }
-
-
+//made function that creates less code to written using the Math.floor and the Mathh.random
+function randomWholeNumber (arr){
+  var randomIndex = Math.floor(Math.random()* arr.length);
+  var randomElement = arr[randomIndex];
+  return randomElement
+}
 
 
 // Write password to the #password input
@@ -62,6 +66,7 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
 
 
 
