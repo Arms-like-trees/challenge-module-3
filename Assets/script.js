@@ -14,6 +14,7 @@ var alphaUpperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(
 var listOfNumbers = '0123456789'.split(
     ''
 )
+var specialCharacters = ['"', "'", "!","#","$","%","&","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~"]
 
 //function to gather user inputs
 function passwordOptions (){
@@ -73,6 +74,10 @@ function generatePassword(){
     //  if numbers comes back as the Boolean value of true it adds the listOfNumbers charaters to above empty array using concat and push
     possibleCharacters = possibleCharacters.concat(listOfNumbers);
     promisedCharacters.push(randomWholeNumber(listOfNumbers))
+  } if (optionsChoosen.specialCharacters){
+     //  if specialCharacter comes back as the Boolean value of true it adds the spcialCharacters charaters to above empty array using concat and push
+    possibleCharacters = possibleCharacters.concat(specialCharacters);
+    promisedCharacters.push(randomWholeNumber(specialCharacters))
   }
 console.log(possibleCharacters)
 console.log(promisedCharacters)
@@ -130,4 +135,4 @@ var listOfNumbers = '0123456789'.split(
 //var specialCharacters = ["!#$%&'()*+,-./:;<=>?@[\]^_{|}~"].split 
 
 
-var specialCharacters = ['"', "'", "!",]
+
