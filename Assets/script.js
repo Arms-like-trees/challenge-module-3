@@ -1,6 +1,18 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+var generateBtn = document.querySelector("#generate");
+
+var alphaLowerCase = 'abcdefghijklmnopqrstuvwxyz'.split(
+  ''
+)
+var alphaUpperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(
+  ''
+  )
+var listOfNumbers = '0123456789'.split(
+    ''
+)
+
 //function for gereratePassword
 
 function gereratePassword(){
