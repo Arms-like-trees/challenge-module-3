@@ -55,6 +55,42 @@ function randomWholeNumber (arr){
 }
 
 
+function generatePassword(){
+  var optionsChoosen = passwordOptions()
+  //The following three are empty arrays to have any true boolean response populate the character options
+  var possibleCharacters = []
+  var promisedCharacters = []
+  var finalPassword = []
+  //if lowerCase comes back as the Boolean value of true it adds the alphaLowerCase charaters to above empty array using concat and push
+  if (optionsChoosen.lowerCase){
+    possibleCharacters = possibleCharacters.concat(alphaLowerCase);
+    promisedCharacters.push(randomWholeNumber(alphaLowerCase))
+  } if (optionsChoosen.upperCase){
+  //  if upperCase comes back as the Boolean value of true it adds the alphaUpperCase charaters to above empty array using concat and push
+    possibleCharacters = possibleCharacters.concat(alphaUpperCase);
+    promisedCharacters.push(randomWholeNumber(alphaUpperCase))
+  } if (optionsChoosen.numbers){
+    //  if numbers comes back as the Boolean value of true it adds the listOfNumbers charaters to above empty array using concat and push
+    possibleCharacters = possibleCharacters.concat(listOfNumbers);
+    promisedCharacters.push(randomWholeNumber(listOfNumbers))
+  }
+console.log(possibleCharacters)
+console.log(promisedCharacters)
+
+ for (var i=0; i < optionsChoosen.length; i++){
+  var possibleCharacter = randomWholeNumber(possibleCharacters);
+  finalPassword.push(possibleCharacter)
+ }
+ for (var i=0; i < promisedCharacters.length; i++){
+  finalPassword[i] = promisedCharacters [i]
+ }
+  return finalPassword.join("")
+}
+
+
+
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -95,21 +131,3 @@ var listOfNumbers = '0123456789'.split(
 
 
 var specialCharacters = ['"', "'", "!",]
-
-
-function generatePassword() {
-  //ask for length
-  var length = parseInt(prompt("How long would you like the password length(8-128)?"))
- 
- //validate that length is numeric 8-128
-   if (8 <= length <= 128){console.log(length)
-//ask for lowercase
-var lowerCase = confirm("Click ok for lowercase characters." );
- //ask for uppercase
- var upperCase = confirm("Click ok for uppercase characters.");
- //ask for numeric
- var numbers = confirm("Click ok for numeric characters.");
- //ask for special criteria
- var specialCharacters = confirm("Click ok for special characters.");
-   }
-  }
