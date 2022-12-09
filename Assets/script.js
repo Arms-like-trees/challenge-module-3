@@ -47,6 +47,10 @@ var lowerCase = confirm("Click ok for lowercase characters." );
  };
  return userOptions
 }
+
+
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -58,3 +62,31 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+
+//variable array and function to get random character for each specified group
+function getRandomLower () {
+  return alphaLowerCase[(Math.floor(Math.random() * 26))]
+  }
+  var alphaLowerCase = 'abcdefghijklmnopqrstuvwxyz'.split(
+    ''
+  )  
+  
+  function getRandomUpper () {
+    return alphaUpperCase[(Math.floor(Math.random() * 26))]
+    }
+  var alphaUpperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(
+    ''
+  )
+  
+  function getRandomNumber () {
+    return listOfNumbers[(Math.floor(Math.random() * 10))]
+    }
+  var listOfNumbers = '0123456789'.split(
+    ''
+  )
+  //var specialCharacters = ["!#$%&'()*+,-./:;<=>?@[\]^_{|}~"].split 
+  
+  
+  var specialCharacters = ['"', "'", "!",]
