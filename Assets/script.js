@@ -15,7 +15,7 @@ var listOfNumbers = '0123456789'.split(
     ''
 )
 
-//function for gereratePassword
+//function to gather user inputs
 function passwordOptions (){
   //ask for length
   var length = parseInt(prompt("How long would you like the password length(8-128)?"))
@@ -67,26 +67,44 @@ generateBtn.addEventListener("click", writePassword);
 
 //variable array and function to get random character for each specified group
 function getRandomLower () {
-  return alphaLowerCase[(Math.floor(Math.random() * 26))]
+return alphaLowerCase[(Math.floor(Math.random() * 26))]
+}
+var alphaLowerCase = 'abcdefghijklmnopqrstuvwxyz'.split(
+  ''
+)  
+
+function getRandomUpper () {
+  return alphaUpperCase[(Math.floor(Math.random() * 26))]
   }
-  var alphaLowerCase = 'abcdefghijklmnopqrstuvwxyz'.split(
-    ''
-  )  
-  
-  function getRandomUpper () {
-    return alphaUpperCase[(Math.floor(Math.random() * 26))]
-    }
-  var alphaUpperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(
-    ''
-  )
-  
-  function getRandomNumber () {
-    return listOfNumbers[(Math.floor(Math.random() * 10))]
-    }
-  var listOfNumbers = '0123456789'.split(
-    ''
-  )
-  //var specialCharacters = ["!#$%&'()*+,-./:;<=>?@[\]^_{|}~"].split 
-  
-  
-  var specialCharacters = ['"', "'", "!",]
+var alphaUpperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(
+  ''
+)
+
+function getRandomNumber () {
+  return listOfNumbers[(Math.floor(Math.random() * 10))]
+  }
+var listOfNumbers = '0123456789'.split(
+  ''
+)
+//var specialCharacters = ["!#$%&'()*+,-./:;<=>?@[\]^_{|}~"].split 
+
+
+var specialCharacters = ['"', "'", "!",]
+
+
+function generatePassword() {
+  //ask for length
+  var length = parseInt(prompt("How long would you like the password length(8-128)?"))
+ 
+ //validate that length is numeric 8-128
+   if (8 <= length <= 128){console.log(length)
+//ask for lowercase
+var lowerCase = confirm("Click ok for lowercase characters." );
+ //ask for uppercase
+ var upperCase = confirm("Click ok for uppercase characters.");
+ //ask for numeric
+ var numbers = confirm("Click ok for numeric characters.");
+ //ask for special criteria
+ var specialCharacters = confirm("Click ok for special characters.");
+   }
+  }
