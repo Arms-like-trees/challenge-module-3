@@ -15,14 +15,19 @@ var listOfNumbers = '0123456789'.split(
     ''
 )
 var specialCharacters = ['"', "'", "!","#","$","%","&","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~"]
-
+var length ;
 //function to gather user inputs
 function passwordOptions (){
   //ask for length
-  var length = parseInt(prompt("How long would you like the password length(8-128)?"))
+  length = parseInt(prompt("How long would you like the password length(8-128)?"))
  
  //validate that length is numeric 8-128
-   if (8 <= length <= 128){console.log(length)
+   if (length < 8 || length > 128)
+   {length = parseInt(alert("You must choose between 8 and 128"))
+   return passwordOptions();}
+   else (console.log)
+   {console.log(length)
+
 //ask for lowercase
 var lowerCase = confirm("Click ok for lowercase characters." );
  //ask for uppercase
