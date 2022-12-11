@@ -1,8 +1,6 @@
 // Assignment Code
 
-//Global variables
-var generateBtn = document.querySelector("#generate");
-
+//Global variables and arrays for each criteria
 var generateBtn = document.querySelector("#generate");
 
 var alphaLowerCase = 'abcdefghijklmnopqrstuvwxyz'.split(
@@ -21,8 +19,8 @@ function passwordOptions (){
   //ask for length
   length = parseInt(prompt("How long would you like the password length(8-128)?"))
  
- //validate that length is numeric 8-128
-   if (length < 8 || length > 128)
+ //validate that length is a number 8-128
+   if (length < 8 || length > 128 )
    {length = parseInt(alert("You must choose between 8 and 128"))
    return passwordOptions();}
    else (console.log)
@@ -39,10 +37,7 @@ var lowerCase = confirm("Click ok for lowercase characters." );
    }
 
 
- //validate that atleast one of above four criteria (lowercase, uppercase, numeric, symbol).
- if (lowerCase || upperCase || numbers || specialCharacters){
-
- }
+// consolidates user options into single array
  var userOptions = 
  {
    length:length,
@@ -116,7 +111,7 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-//variable array and function to get random character for each specified group
+//variable array and function to get random character for each specified group what they would have looked like before the above simplifed function
 function getRandomLower () {
 return alphaLowerCase[(Math.floor(Math.random() * 26))]
 }
@@ -137,7 +132,3 @@ function getRandomNumber () {
 var listOfNumbers = '0123456789'.split(
   ''
 )
-//var specialCharacters = ["!#$%&'()*+,-./:;<=>?@[\]^_{|}~"].split 
-
-
-
