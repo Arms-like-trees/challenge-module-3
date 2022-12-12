@@ -23,6 +23,11 @@ function passwordOptions (){
    if (length < 8 || length > 128 )
    {length = parseInt(alert("You must choose between 8 and 128"))
    return passwordOptions();}
+   // The isNan kicks back if user inputs characters that are not numeric
+   if (isNaN(length)){
+    alert("You must choose a whole number between 8 and 128")
+    return passwordOptions()
+   }
    else (console.log)
    {console.log(length)
 
@@ -34,7 +39,9 @@ var lowerCase = confirm("Click ok for lowercase characters." );
  var numbers = confirm("Click ok for numeric characters.");
  //ask for special criteria
  var specialCharacters = confirm("Click ok for special characters.");
-   }
+   
+}
+
 
 
 // consolidates user options into single array
